@@ -9,6 +9,7 @@ class Home extends Component {
       title: 'Unsplash Search',
       imageSearch: '',
       loading: false,
+      images: [],
     };
   }
 
@@ -25,11 +26,16 @@ class Home extends Component {
       loading: true,
     });
 
-    api.search(this.state.imageSearch);
+    api.search(this.state.imageSearch).then((images) => {
+      this.setState({
+        loading: false,
+        images,
+      });
+    });
   }
 
   render() {
-    const { title, imageSearch, loading } = this.state;
+    const { title, imageSearch, loading, images } = this.state;
     return (
       <div className="App">
         <h1>{title}</h1>
@@ -54,7 +60,11 @@ class Home extends Component {
         ) : (
           ''
         )}
-        <section className="images" />
+        <section className="images">
+          {images.map((image) => (
+            <img src={image.urls.regular} alt="" />
+          ))}
+        </section>
         <div className="createdby">
           <p>
             created by <a href="https://github.com/equk">equk</a>
