@@ -8,6 +8,7 @@ class Home extends Component {
     this.state = {
       title: 'Unsplash Search',
       imageSearch: '',
+      loading: false,
     };
   }
 
@@ -20,11 +21,15 @@ class Home extends Component {
   formSubmitted(event) {
     event.preventDefault();
 
+    this.setState({
+      loading: true,
+    });
+
     api.search(this.state.imageSearch);
   }
 
   render() {
-    const { title, imageSearch } = this.state;
+    const { title, imageSearch, loading } = this.state;
     return (
       <div className="App">
         <h1>{title}</h1>
@@ -40,6 +45,15 @@ class Home extends Component {
           />
           <button type="submit">Search</button>
         </form>
+        {loading ? (
+          <img
+            src="img/loading.svg"
+            alt="api_loading"
+            className="api_loading"
+          />
+        ) : (
+          ''
+        )}
         <section className="images" />
         <div className="createdby">
           <p>
