@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import api from './api/unsplash';
+
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -15,12 +17,18 @@ class Home extends Component {
     });
   }
 
+  formSubmitted(event) {
+    event.preventDefault();
+
+    api.search(this.state.imageSearch);
+  }
+
   render() {
     const { title, imageSearch } = this.state;
     return (
       <div className="App">
         <h1>{title}</h1>
-        <form>
+        <form onSubmit={(event) => this.formSubmitted(event)}>
           <label htmlFor="imageSearch">Image Search</label>
           <input
             className="searchBox"
