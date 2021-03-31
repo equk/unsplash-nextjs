@@ -6,8 +6,6 @@ export default {
     const url = `${API_URL}&query=${imageSearch}`;
     return fetch(url)
       .then((response) => response.json())
-      .then((result) => {
-        console.log(result.results);
-      });
+      .then((result) => result.results);
   },
 };
