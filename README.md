@@ -10,6 +10,7 @@
 - [x] API Key Seperated Using `.env.local`
 - [x] Conditional Rendering
 - [x] Virtual DOM
+- [x] Cascading Grid
 
 requirements: [unsplash developer api key](https://unsplash.com/developers)
 
