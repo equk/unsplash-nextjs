@@ -177,10 +177,7 @@ form {
 }
 
 img {
-  object-fit: cover;
-  width:350px;
-  height:350px;
-  padding: 0 4px;
+  max-width: 100%;
 }
 
 .createdby {
@@ -190,7 +187,6 @@ img {
 }
 
 .ImageResult {
-  float: left;
   position: relative;
 }
 
@@ -220,4 +216,21 @@ img {
   width: 30%;
   margin: auto;
   display: block;
+}
+
+/* masonry grid */
+
+.gallery-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+.gallery-grid_column {
+  background-clip: padding-box;
+}
+
+.gallery-grid_column > div {
+  background: #ffffff;
+  padding: 0 5px;
 }
