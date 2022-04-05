@@ -4,6 +4,9 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 2018,
     requireConfigFile: false,
+    babelOptions: {
+      presets: ['@babel/preset-react'],
+    },
   },
   env: {
     browser: true,
@@ -61,6 +64,8 @@ module.exports = {
     'react/react-in-jsx-scope': 0,
     'react/prefer-stateless-function': 0,
     'react/forbid-prop-types': 0,
+    'react/prop-types': 0,
+    'react/jsx-props-no-spreading': 0,
     'react/no-unescaped-entities': 0,
     'jsx-a11y/accessible-emoji': 0,
     'jsx-a11y/label-has-associated-control': 0,
