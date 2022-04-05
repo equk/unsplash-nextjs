@@ -1,8 +1,9 @@
 module.exports = {
   extends: ['airbnb', 'prettier', 'plugin:@next/next/recommended'],
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   parserOptions: {
     ecmaVersion: 2018,
+    requireConfigFile: false,
   },
   env: {
     browser: true,
