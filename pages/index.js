@@ -69,27 +69,25 @@ class Home extends Component {
             columnClassName="gallery-grid_column"
           >
             {images.map((image) => (
-              <>
-                <div className="ImageResult">
-                  <img key={image.id} src={image.urls.regular} alt="" />
-                  <a
-                    href={image.links.html}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    className="view_link"
-                  >
-                    View on Unsplash
-                  </a>
-                  <a
-                    href={image.user.links.html}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    className="user_link"
-                  >
-                    Photo by: {image.user.name}
-                  </a>
-                </div>
-              </>
+              <div className="ImageResult">
+                <img key={image.id} src={image.urls.regular} alt="" />
+                <a
+                  href={image.links.html}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="view_link"
+                >
+                  View on Unsplash
+                </a>
+                <a
+                  href={image.user.links.html}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="user_link"
+                >
+                  Photo by: {image.user.name}
+                </a>
+              </div>
             ))}
           </Masonry>
         </section>
